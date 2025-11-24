@@ -19,11 +19,10 @@ const Form = forwardRef<FormHandle, FormProps>(function Form(
   ref
 ) {
   const form = useRef<HTMLFormElement>(null);
-
+ 
   useImperativeHandle(ref, () => {
     return {
       clear() {
-        console.log('CLEARING');
         form.current?.reset();
       },
     };
